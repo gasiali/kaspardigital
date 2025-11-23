@@ -1,0 +1,391 @@
+<!DOCTYPE:html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Project Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f7f7f7; }
+        .project-card { transition: transform 0.2s, box-shadow 0.2s; }
+        .project-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); }
+        .router-link { cursor: pointer; }
+        .content-area { min-height: 80vh; }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navigation Header -->
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Navigating to the root ('home') sets the hash to '#page=home' -->
+            <a href="javascript:void(0)" onclick="navigate('home')" class="text-2xl font-bold text-indigo-600 hover:text-indigo-800 router-link">
+                Kaspar Digital
+            </a>
+            <div id="nav-actions">
+                <!-- Nav actions like a back button will be added here dynamically -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main id="content" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 content-area">
+        <!-- Content will be injected here by JavaScript -->
+        <div class="text-center py-20 text-gray-500">Loading portfolio...</div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-10">
+        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; <span id="current-year"></span> Kaspar Digital. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // --- 1. MODULAR APPLICATION DATA ---
+        const projectsData = {
+            "TimeTrackerPro": {
+                type: "mobile", 
+                tagline: "Effortless time tracking for freelancers.",
+                description: "TimeTracker Pro is designed to simplify your billing process. Log hours with a single tap, generate beautiful PDF reports, and sync data across all your devices. It supports multiple clients and projects, ensuring you never miss a billable minute.",
+                link: "https://apps.apple.com/us/app/time-tracker-pro/id1234567890",
+                supportText: `
+                    <p>Thank you for choosing TimeTracker Pro! We're committed to providing excellent support.</p>
+                    <h4 class="text-xl font-semibold mt-4 mb-2 text-gray-800">Contact Support</h4>
+                    <p>For technical issues, billing questions, or feedback, please email us directly at:</p>
+                    <p class="font-mono bg-gray-100 p-2 rounded-lg inline-block my-2">support@mytimestudio.com</p>
+                    <h4 class="text-xl font-semibold mt-4 mb-2 text-gray-800">User Guides & FAQs</h4>
+                    <p>Visit our dedicated help center for detailed guides and frequently asked questions: <a href="https://support.mytimestudio.com/timetracker" target="_blank" class="text-indigo-600 hover:underline">Help Center Link</a></p>
+                `,
+                privacyText: `
+                    <p><strong>Effective Date:</strong> October 26, 2025</p>
+                    <h4 class="text-xl font-semibold mt-4 mb-2 text-gray-800">Data Collection & Use</h4>
+                    <p>TimeTracker Pro collects the following data for core functionality:</p>
+                    <ul class="list-disc list-inside ml-4 mt-2 space-y-1">
+                        <li>Time entries (duration, project name, notes).</li>
+                        <li>Client and project names.</li>
+                        <li>User preferences.</li>
+                    </ul>
+                    <p class="mt-4">This data is stored securely in your private iCloud account or locally on your device and is not accessed by our servers.</p>
+                    <h4 class="text-xl font-semibold mt-4 mb-2 text-gray-800">Third-Party Services</h4>
+                    <p>We use minimal third-party services. Specifically, we use an anonymous crash reporting tool (Firebase Crashlytics) to monitor app stability, which does not log personal information.</p>
+                    <p class="mt-4">For questions regarding this policy, please contact privacy@mytimestudio.com.</p>
+                `,
+                iconUrl: "https://placehold.co/100x100/4F46E5/FFFFFF?text=PRO",
+                features: ["Cloud Sync", "PDF Export", "Client Management", "Widget Support"]
+            },
+            "PixelPainterGo": {
+                type: "mobile",
+                tagline: "Create beautiful pixel art on the go.",
+                description: "PixelPainter Go is the ultimate mobile pixel art canvas. Featuring a massive color palette, layer support, and intuitive gestures, you can turn any idea into retro-style artwork. Export your creations as GIFs or PNGs easily.",
+                link: "https://apps.apple.com/us/app/pixel-painter-go/id9876543210",
+                supportText: `
+                    <p>Having trouble with PixelPainter Go? We're here to help you get back to creating!</p>
+                    <h4 class="text-xl font-semibold mt-4 mb-2 text-gray-800">Tutorials</h4>
+                    <p>Check out our YouTube channel for video tutorials on layers, animation, and color theory: <a href="https://youtube.com/pixelpaintergo" target="_blank" class="text-indigo-600 hover:underline">YouTube Tutorials</a></p>
+                    <h4 class="text-xl font-semibold mt-4 mb-2 text-gray-800">Email Support</h4>
+                    <p>If you encounter a bug or have a feature request, please send details to:</p>
+                    <p class="font-mono bg-gray-100 p-2 rounded-lg inline-block my-2">artsupport@mypixelstudio.com</p>
+                `,
+                privacyText: `
+                    <p><strong>Effective Date:</strong> September 1, 2025</p>
+                    <h4 class="text-xl font-semibold mt-4 mb-2 text-gray-800">User Generated Content</h4>
+                    <p>All art created with PixelPainter Go remains the exclusive property of the user. We do not claim ownership of any content created within the app.</p>
+                    <h4 class="text-xl font-semibold mt-4 mb-2 text-gray-800">Advertising</h4>
+                    <p>The free version of PixelPainter Go displays non-personalized advertisements served via the Apple Ad Network. The Premium version is ad-free.</p>
+                    <p class="mt-4">We are fully compliant with GDPR and CCPA. Read the full text here: <a href="https://mypixelstudio.com/privacy/full" target="_blank" class="text-indigo-600 hover:underline">Full Privacy Document</a></p>
+                `,
+                iconUrl: "https://placehold.co/100x100/10B981/FFFFFF?text=PX",
+                features: ["Layer System", "GIF Export", "256 Color Palette", "Custom Brushes"]
+            },
+            "SmartHomeHub": {
+                type: "iot",
+                tagline: "The open-source core for your secure, local-first smart home.",
+                description: "A secure, local-first IoT hub solution built on Raspberry Pi. It integrates diverse protocols like Zigbee and Matter, providing a unified dashboard and advanced automation capabilities. Source code is available on GitHub.",
+                link: "https://github.com/my-studio/smarthome-hub",
+                supportText: `
+                    <p>Welcome to the SmartHomeHub community support page. As an open-source project, our support is primarily community-driven.</p>
+                    <h4 class="text-xl font-semibold mt-4 mb-2 text-gray-800">Community Forums</h4>
+                    <p>Post issues, ask configuration questions, and engage with other users on our dedicated forum: <a href="https://forum.smarthomehub.io" target="_blank" class="text-indigo-600 hover:underline">SmartHomeHub Forum</a></p>
+                    <h4 class="text-xl font-semibold mt-4 mb-2 text-gray-800">Bug Reports & Feature Requests</h4>
+                    <p>For code-related issues, please submit an issue directly on our GitHub repository.</p>
+                `,
+                privacyText: `
+                    <p><strong>Effective Date:</strong> January 1, 2026</p>
+                    <h4 class="text-xl font-semibold mt-4 mb-2 text-gray-800">Data Handling (Local-First)</h4>
+                    <p>The SmartHomeHub is designed to be a local-first system. All device data, automation rules, and user interaction logs remain on your local server/Raspberry Pi.</p>
+                    <h4 class="text-xl font-semibold mt-4 mb-2 text-gray-800">Cloud Services (Optional)</h4>
+                    <p>Optional cloud services (e.g., remote access, voice assistant integration) are explicitly opt-in and handled by third-party connectors (like Amazon or Google), not by our core software.</p>
+                    <p class="mt-4">As the software is open-source, we encourage users to audit the code for security and privacy compliance.</p>
+                `,
+                iconUrl: "https://placehold.co/100x100/3B82F6/FFFFFF?text=IOT",
+                features: ["Local Control", "Zigbee/Matter Support", "Open Source", "API Access"]
+            },
+            "BespokeAnalytics": {
+                type: "solution",
+                tagline: "Custom data visualization platform for small businesses.",
+                description: "A subscription-based web service offering bespoke analytics dashboards. It processes raw business data and provides actionable insights through customized, secure reports. This solution is tailor-made for B2B applications.",
+                link: "https://bespoke-analytics.com/demo",
+                supportText: `
+                    <p>Welcome to Bespoke Analytics support. For subscribed users, please contact your assigned account manager directly.</p>
+                    <h4 class="text-xl font-semibold mt-4 mb-2 text-gray-800">Service Status</h4>
+                    <p>Check the current status of all services (uptime, planned maintenance) on our status page: <a href="https://status.bespokeanalytics.com" target="_blank" class="text-indigo-600 hover:underline">System Status</a></p>
+                    <h4 class="text-xl font-semibold mt-4 mb-2 text-gray-800">Emergency Contact</h4>
+                    <p>For critical outages, call our 24/7 hotline:</p>
+                    <p class="font-mono bg-gray-100 p-2 rounded-lg inline-block my-2">+1 (800) 555-DATA</p>
+                `,
+                privacyText: `
+                    <p><strong>Effective Date:</strong> February 14, 2026</p>
+                    <h4 class="text-xl font-semibold mt-4 mb-2 text-gray-800">Data Ownership</h4>
+                    <p>Client data remains the exclusive property of the client. We act purely as a data processor. Data is pseudonymized whenever possible during analysis.</p>
+                    <h4 class="text-xl font-semibold mt-4 mb-2 text-gray-800">Security Measures</h4>
+                    <p>We use industry-standard encryption (AES-256) at rest and TLS 1.3 in transit. Our servers are hosted in SOC 2 compliant data centers.</p>
+                    <p class="mt-4">All contracts include a Data Processing Addendum (DPA) to cover regulatory requirements like GDPR and HIPAA.</p>
+                `,
+                iconUrl: "https://placehold.co/100x100/EF4444/FFFFFF?text=WEB",
+                features: ["Custom Dashboards", "Data Security", "API Integration", "Real-Time Reporting"]
+            }
+        };
+
+        // --- 2. ROUTING AND RENDERING LOGIC ---
+
+        const contentElement = document.getElementById('content');
+        const navActionsElement = document.getElementById('nav-actions');
+
+        // Handles client-side navigation using URL hash fragments (safer in restricted environments)
+        function navigate(page, projectKey = null, section = null) {
+            let hashPath = `page=${page}`;
+            if (projectKey) hashPath += `&project=${encodeURIComponent(projectKey)}`;
+            if (section) hashPath += `&section=${section}`;
+            
+            // Set the hash. This automatically triggers the window.onhashchange listener.
+            window.location.hash = hashPath;
+            
+            window.scrollTo(0, 0); // Scroll to top immediately for better feel
+            // Note: We rely on the window.onhashchange event to trigger the render.
+        }
+
+        // Main rendering function based on URL state
+        function render(page, projectKey, section) {
+            contentElement.innerHTML = '';
+            navActionsElement.innerHTML = '';
+
+            // Handle back button for detail views
+            if (page === 'detail' || page === 'support' || page === 'privacy') {
+                navActionsElement.innerHTML = `
+                    <button onclick="navigate('home')" class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 font-medium text-sm transition duration-150">
+                        &larr; Back to Portfolio
+                    </button>
+                `;
+            }
+
+            switch (page) {
+                case 'home':
+                    renderHome();
+                    break;
+                case 'detail':
+                    if (projectKey && projectsData[projectKey]) {
+                        renderProjectDetail(projectKey, section);
+                    } else {
+                        renderNotFound();
+                    }
+                    break;
+                default:
+                    renderHome();
+            }
+        }
+
+        // Renders the main portfolio page
+        function renderHome() {
+            contentElement.innerHTML = `
+                <section class="text-center mb-12">
+                    <h1 class="text-5xl font-extrabold text-gray-900 mb-4">My Full Project Portfolio</h1>
+                    <p class="text-xl text-gray-600">A collection of mobile applications, IoT solutions, and custom software systems.</p>
+                </section>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    ${Object.keys(projectsData).map(key => `
+                        <div onclick="navigate('detail', '${key}')" class="project-card bg-white p-6 rounded-xl shadow-lg border border-gray-100 cursor-pointer">
+                            <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full mb-3 ${getBadgeColor(projectsData[key].type)}">${projectsData[key].type.toUpperCase()}</span>
+                            <img src="${projectsData[key].iconUrl}" alt="${key} Icon" class="w-16 h-16 rounded-2xl mx-auto mb-4 object-cover">
+                            <h2 class="text-2xl font-bold text-gray-900 mb-2 text-center">${key}</h2>
+                            <p class="text-indigo-600 font-medium text-sm text-center">${projectsData[key].tagline}</p>
+                            <p class="text-gray-500 mt-4 text-center">${projectsData[key].description.substring(0, 100)}...</p>
+                            <div class="mt-4 text-center">
+                                <span class="text-sm font-semibold text-indigo-500 hover:text-indigo-700">View Project &rarr;</span>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+        
+        // Helper function to get badge color based on project type
+        function getBadgeColor(type) {
+            switch(type) {
+                case 'mobile': return 'bg-indigo-100 text-indigo-800';
+                case 'iot': return 'bg-blue-100 text-blue-800';
+                case 'solution': 
+                case 'web': return 'bg-red-100 text-red-800';
+                default: return 'bg-gray-100 text-gray-800';
+            }
+        }
+        
+        // Helper function to get the link button text and icon
+        function getLinkButtonDetails(type) {
+            switch(type) {
+                case 'mobile':
+                    return { text: 'Get on the App Store', color: 'bg-green-600 hover:bg-green-700', iconPath: 'M10 2a8 8 0 100 16 8 8 0 000-16zM5.3 8.3a1 1 0 011.4 0L10 11.6l3.3-3.3a1 1 0 111.4 1.4l-4 4a1 1 0 01-1.4 0l-4-4a1 1 0 010-1.4z' };
+                case 'iot':
+                case 'solution':
+                case 'web':
+                    return { text: 'View Project / Demo', color: 'bg-indigo-600 hover:bg-indigo-700', iconPath: 'M10 6a4 4 0 00-4 4v.265c.57.241 1.25.465 2.1.615.85.15 1.83.22 3 .22s2.15-.07 3-.22c.85-.15 1.53-.374 2.1-.615V10a4 4 0 00-4-4zm0 2c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3z' };
+                default:
+                    return { text: 'Visit Website', color: 'bg-gray-600 hover:bg-gray-700', iconPath: 'M10 2a8 8 0 100 16 8 8 0 000-16zM5.3 8.3a1 1 0 011.4 0L10 11.6l3.3-3.3a1 1 0 111.4 1.4l-4 4a1 1 0 01-1.4 0l-4-4a1 1 0 010-1.4z' };
+            }
+        }
+
+
+        // Renders the detail, support, or privacy page for a specific project
+        function renderProjectDetail(projectKey, section = 'overview') {
+            const project = projectsData[projectKey];
+            const activeClass = "bg-indigo-600 text-white";
+            const inactiveClass = "text-gray-700 hover:bg-gray-100";
+            const linkButton = getLinkButtonDetails(project.type);
+            
+            let mainContent = '';
+            let title = projectKey;
+            
+            // --- Link/Access Button Logic ---
+            let accessButtonContent;
+            if (project.link) {
+                // If a link exists, render the button with added security attributes
+                accessButtonContent = `
+                    <a href="${project.link}" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm text-white ${linkButton.color} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="${linkButton.iconPath}" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+                        ${linkButton.text}
+                    </a>
+                `;
+            } else {
+                // If no link exists, show an unavailable message
+                accessButtonContent = `
+                    <div class="w-full p-3 bg-gray-200 text-gray-600 rounded-lg text-center font-medium">
+                        Link currently unavailable.
+                    </div>
+                `;
+            }
+            // --- End Link/Access Button Logic ---
+
+
+            if (section === 'support') {
+                title = `${projectKey} - Support`;
+                mainContent = `<div class="prose max-w-none text-gray-700">${project.supportText}</div>`;
+            } else if (section === 'privacy') {
+                title = `${projectKey} - Privacy Policy`;
+                mainContent = `<div class="prose max-w-none text-gray-700">${project.privacyText}</div>`;
+            } else { // default to overview
+                title = projectKey;
+                mainContent = `
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <div class="lg:col-span-2">
+                            <p class="text-xl text-gray-600 mb-6">${project.description}</p>
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-3">Key Features</h3>
+                            <ul class="list-none space-y-2">
+                                ${project.features.map(f => `
+                                    <li class="flex items-center text-lg text-gray-700">
+                                        <svg class="w-5 h-5 text-indigo-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                        ${f}
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                        <div class="lg:col-span-1 p-6 bg-gray-50 rounded-xl shadow-inner border border-gray-200">
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-4">${linkButton.text.includes('App Store') ? 'Download' : 'Access'}</h3>
+                            ${accessButtonContent}
+                            <p class="text-xs text-gray-500 mt-2 text-center">Project Type: ${project.type.toUpperCase()}</p>
+                        </div>
+                    </div>
+                `;
+            }
+
+            contentElement.innerHTML = `
+                <section class="bg-white p-8 rounded-xl shadow-2xl border border-gray-100">
+                    <div class="flex flex-col sm:flex-row items-center sm:items-start mb-8 border-b pb-6">
+                        <img src="${project.iconUrl}" alt="${projectKey} Icon" class="w-24 h-24 rounded-3xl object-cover shadow-xl mb-4 sm:mb-0 sm:mr-6">
+                        <div>
+                            <span class="inline-block px-3 py-1 text-sm font-semibold rounded-full mb-2 ${getBadgeColor(project.type)}">${project.type.toUpperCase()} PROJECT</span>
+                            <h1 class="text-4xl font-extrabold text-gray-900">${title}</h1>
+                            <p class="text-xl text-indigo-600 mt-1">${project.tagline}</p>
+                        </div>
+                    </div>
+
+                    <!-- Modular Navigation Tabs -->
+                    <div class="flex flex-wrap border-b border-gray-200 mb-8">
+                        <button onclick="navigate('detail', '${projectKey}', 'overview')" class="px-4 py-2 text-sm font-medium rounded-t-lg transition-colors router-link ${section === 'overview' || section === null ? activeClass : inactiveClass}">
+                            Overview & Access
+                        </button>
+                        <button onclick="navigate('detail', '${projectKey}', 'support')" class="px-4 py-2 text-sm font-medium rounded-t-lg transition-colors router-link ${section === 'support' ? activeClass : inactiveClass}">
+                            Support
+                        </button>
+                        <button onclick="navigate('detail', '${projectKey}', 'privacy')" class="px-4 py-2 text-sm font-medium rounded-t-lg transition-colors router-link ${section === 'privacy' ? activeClass : inactiveClass}">
+                            Privacy Policy
+                        </button>
+                    </div>
+
+                    <!-- Main Content Panel -->
+                    <div>
+                        ${mainContent}
+                    </div>
+
+                </section>
+            `;
+        }
+
+        // Renders a simple 404/Not Found page
+        function renderNotFound() {
+            contentElement.innerHTML = `
+                <div class="text-center py-20">
+                    <h1 class="text-6xl font-extrabold text-indigo-600 mb-4">404</h1>
+                    <p class="text-2xl text-gray-700 mb-8">Oops! We couldn't find that page or project.</p>
+                    <button onclick="navigate('home')" class="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 font-medium transition duration-150">
+                        Go Home
+                    </button>
+                </div>
+            `;
+        }
+
+        // --- 3. INITIALIZATION AND HISTORY HANDLERS (UPDATED TO USE HASH) ---
+
+        // Function to parse the current URL hash parameters
+        function getUrlParams() {
+            // Parse parameters from the hash fragment (e.g., #page=detail&project=...)
+            const hash = window.location.hash.substring(1); // Remove the leading '#'
+            const params = new URLSearchParams(hash);
+
+            return {
+                // If hash is empty (e.g., first load), default to 'home'.
+                page: params.get('page') || 'home', 
+                projectKey: params.get('project'),
+                section: params.get('section') || 'overview'
+            };
+        }
+
+        // Handle initial load and subsequent hash changes
+        function initialize() {
+            const params = getUrlParams();
+            render(params.page, params.projectKey, params.section);
+        }
+
+        // Handle browser back/forward buttons and direct hash manipulation
+        // The hash fragment is generally allowed to be modified even in restricted environments.
+        window.onhashchange = initialize;
+
+        // Start the application
+        initialize();
+
+    </script>
+</body>
+</html>
