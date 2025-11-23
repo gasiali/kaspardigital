@@ -48,18 +48,13 @@
 
         // --- 1. MODULAR APPLICATION DATA ---
         const projectsData = {
-            "TimeTrackerPro": {
-                type: "mobile", 
-                tagline: "Effortless time tracking for freelancers.",
-                description: "TimeTracker Pro is designed to simplify your billing process. Log hours with a single tap, generate beautiful PDF reports, and sync data across all your devices. It supports multiple clients and projects, ensuring you never miss a billable minute.",
-                link: "https://apps.apple.com/us/app/time-tracker-pro/id1234567890",
+            "Snake Modern": {
+                type: "mobile",
+                tagline: "Quick break, or a nostalgic evening of gaming.",
+                description: "The legendary retro game is back! Relive the pure, addictive fun of Nokia's classic Snake with a modern, slick twist designed exclusively for your iPhone and iPad.",
+                link: "https://apps.apple.com/",
                 supportText: `
-                    <p>Thank you for choosing TimeTracker Pro! We're committed to providing excellent support.</p>
-                    <h4 class="text-xl font-semibold mt-4 mb-2 text-gray-800">Contact Support</h4>
-                    <p>For technical issues, billing questions, or feedback, please email us directly at:</p>
-                    <p class="font-mono bg-gray-100 p-2 rounded-lg inline-block my-2">support@mytimestudio.com</p>
-                    <h4 class="text-xl font-semibold mt-4 mb-2 text-gray-800">User Guides & FAQs</h4>
-                    <p>Visit our dedicated help center for detailed guides and frequently asked questions: <a href="https://support.mytimestudio.com/timetracker" target="_blank" class="text-indigo-600 hover:underline">Help Center Link</a></p>
+                   
                 `,
                 privacyText: `
                     <p><strong>Effective Date:</strong> October 26, 2025</p>
@@ -73,81 +68,10 @@
                     <p class="mt-4">This data is stored securely in your private iCloud account or locally on your device and is not accessed by our servers.</p>
                     <h4 class="text-xl font-semibold mt-4 mb-2 text-gray-800">Third-Party Services</h4>
                     <p>We use minimal third-party services. Specifically, we use an anonymous crash reporting tool (Firebase Crashlytics) to monitor app stability, which does not log personal information.</p>
-                    <p class="mt-4">For questions regarding this policy, please contact privacy@mytimestudio.com.</p>
+                    <p class="mt-4">For questions regarding this policy, please contact support@kaspardigital.com.</p>
                 `,
                 iconUrl: "https://placehold.co/100x100/4F46E5/FFFFFF?text=PRO",
-                features: ["Cloud Sync", "PDF Export", "Client Management", "Widget Support"]
-            },
-            "PixelPainterGo": {
-                type: "mobile",
-                tagline: "Create beautiful pixel art on the go.",
-                description: "PixelPainter Go is the ultimate mobile pixel art canvas. Featuring a massive color palette, layer support, and intuitive gestures, you can turn any idea into retro-style artwork. Export your creations as GIFs or PNGs easily.",
-                link: "https://apps.apple.com/us/app/pixel-painter-go/id9876543210",
-                supportText: `
-                    <p>Having trouble with PixelPainter Go? We're here to help you get back to creating!</p>
-                    <h4 class="text-xl font-semibold mt-4 mb-2 text-gray-800">Tutorials</h4>
-                    <p>Check out our YouTube channel for video tutorials on layers, animation, and color theory: <a href="https://youtube.com/pixelpaintergo" target="_blank" class="text-indigo-600 hover:underline">YouTube Tutorials</a></p>
-                    <h4 class="text-xl font-semibold mt-4 mb-2 text-gray-800">Email Support</h4>
-                    <p>If you encounter a bug or have a feature request, please send details to:</p>
-                    <p class="font-mono bg-gray-100 p-2 rounded-lg inline-block my-2">artsupport@mypixelstudio.com</p>
-                `,
-                privacyText: `
-                    <p><strong>Effective Date:</strong> September 1, 2025</p>
-                    <h4 class="text-xl font-semibold mt-4 mb-2 text-gray-800">User Generated Content</h4>
-                    <p>All art created with PixelPainter Go remains the exclusive property of the user. We do not claim ownership of any content created within the app.</p>
-                    <h4 class="text-xl font-semibold mt-4 mb-2 text-gray-800">Advertising</h4>
-                    <p>The free version of PixelPainter Go displays non-personalized advertisements served via the Apple Ad Network. The Premium version is ad-free.</p>
-                    <p class="mt-4">We are fully compliant with GDPR and CCPA. Read the full text here: <a href="https://mypixelstudio.com/privacy/full" target="_blank" class="text-indigo-600 hover:underline">Full Privacy Document</a></p>
-                `,
-                iconUrl: "https://placehold.co/100x100/10B981/FFFFFF?text=PX",
-                features: ["Layer System", "GIF Export", "256 Color Palette", "Custom Brushes"]
-            },
-            "SmartHomeHub": {
-                type: "iot",
-                tagline: "The open-source core for your secure, local-first smart home.",
-                description: "A secure, local-first IoT hub solution built on Raspberry Pi. It integrates diverse protocols like Zigbee and Matter, providing a unified dashboard and advanced automation capabilities. Source code is available on GitHub.",
-                link: "https://github.com/my-studio/smarthome-hub",
-                supportText: `
-                    <p>Welcome to the SmartHomeHub community support page. As an open-source project, our support is primarily community-driven.</p>
-                    <h4 class="text-xl font-semibold mt-4 mb-2 text-gray-800">Community Forums</h4>
-                    <p>Post issues, ask configuration questions, and engage with other users on our dedicated forum: <a href="https://forum.smarthomehub.io" target="_blank" class="text-indigo-600 hover:underline">SmartHomeHub Forum</a></p>
-                    <h4 class="text-xl font-semibold mt-4 mb-2 text-gray-800">Bug Reports & Feature Requests</h4>
-                    <p>For code-related issues, please submit an issue directly on our GitHub repository.</p>
-                `,
-                privacyText: `
-                    <p><strong>Effective Date:</strong> January 1, 2026</p>
-                    <h4 class="text-xl font-semibold mt-4 mb-2 text-gray-800">Data Handling (Local-First)</h4>
-                    <p>The SmartHomeHub is designed to be a local-first system. All device data, automation rules, and user interaction logs remain on your local server/Raspberry Pi.</p>
-                    <h4 class="text-xl font-semibold mt-4 mb-2 text-gray-800">Cloud Services (Optional)</h4>
-                    <p>Optional cloud services (e.g., remote access, voice assistant integration) are explicitly opt-in and handled by third-party connectors (like Amazon or Google), not by our core software.</p>
-                    <p class="mt-4">As the software is open-source, we encourage users to audit the code for security and privacy compliance.</p>
-                `,
-                iconUrl: "https://placehold.co/100x100/3B82F6/FFFFFF?text=IOT",
-                features: ["Local Control", "Zigbee/Matter Support", "Open Source", "API Access"]
-            },
-            "BespokeAnalytics": {
-                type: "solution",
-                tagline: "Custom data visualization platform for small businesses.",
-                description: "A subscription-based web service offering bespoke analytics dashboards. It processes raw business data and provides actionable insights through customized, secure reports. This solution is tailor-made for B2B applications.",
-                link: "https://bespoke-analytics.com/demo",
-                supportText: `
-                    <p>Welcome to Bespoke Analytics support. For subscribed users, please contact your assigned account manager directly.</p>
-                    <h4 class="text-xl font-semibold mt-4 mb-2 text-gray-800">Service Status</h4>
-                    <p>Check the current status of all services (uptime, planned maintenance) on our status page: <a href="https://status.bespokeanalytics.com" target="_blank" class="text-indigo-600 hover:underline">System Status</a></p>
-                    <h4 class="text-xl font-semibold mt-4 mb-2 text-gray-800">Emergency Contact</h4>
-                    <p>For critical outages, call our 24/7 hotline:</p>
-                    <p class="font-mono bg-gray-100 p-2 rounded-lg inline-block my-2">+1 (800) 555-DATA</p>
-                `,
-                privacyText: `
-                    <p><strong>Effective Date:</strong> February 14, 2026</p>
-                    <h4 class="text-xl font-semibold mt-4 mb-2 text-gray-800">Data Ownership</h4>
-                    <p>Client data remains the exclusive property of the client. We act purely as a data processor. Data is pseudonymized whenever possible during analysis.</p>
-                    <h4 class="text-xl font-semibold mt-4 mb-2 text-gray-800">Security Measures</h4>
-                    <p>We use industry-standard encryption (AES-256) at rest and TLS 1.3 in transit. Our servers are hosted in SOC 2 compliant data centers.</p>
-                    <p class="mt-4">All contracts include a Data Processing Addendum (DPA) to cover regulatory requirements like GDPR and HIPAA.</p>
-                `,
-                iconUrl: "https://placehold.co/100x100/EF4444/FFFFFF?text=WEB",
-                features: ["Custom Dashboards", "Data Security", "API Integration", "Real-Time Reporting"]
+                features: ["Offline Play"]
             }
         };
 
