@@ -1,8 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  
+
+  // GitHub Pages with custom domain (CNAME: kaspardigital.com) – assets at root
   app: {
+    baseURL: '/',
     head: {
       title: 'Kaspar Digital - Software Engineer',
       htmlAttrs: {
