@@ -88,7 +88,7 @@
             </p>
             <div class="stats-grid">
               <div class="stat-item">
-                <div class="stat-number">5+</div>
+                <div class="stat-number">8+</div>
                 <div class="stat-label">Years Experience</div>
               </div>
               <div class="stat-item">
@@ -96,7 +96,7 @@
                 <div class="stat-label">Projects Completed</div>
               </div>
               <div class="stat-item">
-                <div class="stat-number">100K+</div>
+                <div class="stat-number">100+</div>
                 <div class="stat-label">App Downloads</div>
               </div>
             </div>
@@ -315,7 +315,7 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; 2024 Kaspar Digital. All rights reserved.</p>
+          <p>&copy; 2025 Kaspar Digital. All rights reserved.</p>
         </div>
       </div>
     </footer>
