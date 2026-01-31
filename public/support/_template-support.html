@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--
+  TEMPLATE: Copy this file to add Support page for a new project.
+  1. Copy: cp _template-support.html my-project-id.html
+  2. Replace ALL instances of:
+     - PROJECT_NAME -> Your project display name (e.g. "TaskFlow")
+     - PROJECT_ICON -> Emoji for the project (e.g. "🌐")
+     - project-id -> Your project id (e.g. "taskflow") - must match data/projects/*.ts
+  3. Customize the FAQ content, contact info, and support details.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJECT_NAME - Support & FAQ | Kaspar Digital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #2563eb; --primary-dark: #1e40af; --secondary: #8b5cf6; --accent: #10b981; --text-dark: #1e293b; --text-light: #64748b; --bg-light: #f8fafc; --border: #e2e8f0; --shadow: rgba(15, 23, 42, 0.08); --shadow-lg: rgba(15, 23, 42, 0.12); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Outfit', sans-serif; color: var(--text-dark); background: var(--bg-light); line-height: 1.6; }
+        .navbar { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+        .nav-content { max-width: 1400px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 800; background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .back-link { color: var(--primary); text-decoration: none; font-weight: 600; transition: transform 0.3s; }
+        .back-link:hover { transform: translateX(-5px); }
+        .hero { background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%); padding: 6rem 2rem 4rem; text-align: center; }
+        .hero-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+        .hero-title { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; margin-bottom: 1rem; color: var(--text-dark); }
+        .hero-subtitle { font-size: 1.2rem; color: var(--text-light); max-width: 600px; margin: 0 auto; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 4rem 2rem; }
+        .intro-text { font-size: 1.1rem; color: var(--text-light); margin-bottom: 3rem; text-align: center; line-height: 1.8; }
+        .intro-text strong { color: var(--primary); font-weight: 600; }
+        .contact-card { background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 8px 30px var(--shadow); margin-bottom: 3rem; border: 2px solid transparent; transition: all 0.3s; }
+        .contact-card:hover { border-color: var(--primary); box-shadow: 0 12px 40px var(--shadow-lg); }
+        .contact-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+        .contact-icon { font-size: 2.5rem; }
+        .contact-header h2 { font-size: 2rem; font-weight: 700; color: var(--text-dark); }
+        .contact-card p { color: var(--text-light); margin-bottom: 1.5rem; line-height: 1.8; }
+        .info-list { background: var(--bg-light); padding: 2rem; border-radius: 12px; margin: 2rem 0; }
+        .info-list-title { font-weight: 600; color: var(--text-dark); margin-bottom: 1rem; }
+        .info-list ul { list-style: none; padding-left: 0; }
+        .info-list li { padding: 0.75rem 0; color: var(--text-light); border-bottom: 1px solid var(--border); display: flex; align-items: start; gap: 0.75rem; }
+        .info-list li:last-child { border-bottom: none; }
+        .info-list li strong { color: var(--primary); font-weight: 600; min-width: 180px; }
+        .email-cta { background: var(--primary); color: white; padding: 1.25rem 2.5rem; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 1.1rem; display: inline-block; margin-top: 1.5rem; transition: all 0.3s; box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3); }
+        .email-cta:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        .faq-section { margin-top: 4rem; }
+        .section-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+        .section-icon { font-size: 2.5rem; }
+        .section-title { font-size: 2rem; font-weight: 700; color: var(--text-dark); }
+        .faq-item { background: white; padding: 2rem; border-radius: 16px; margin-bottom: 1.5rem; box-shadow: 0 4px 20px var(--shadow); transition: all 0.3s; border: 2px solid transparent; }
+        .faq-item:hover { border-color: var(--primary); transform: translateY(-2px); }
+        .faq-question { font-size: 1.3rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem; }
+        .faq-answer { color: var(--text-light); line-height: 1.8; font-size: 1.05rem; }
+        .footer { background: var(--text-dark); color: white; padding: 3rem 2rem; margin-top: 6rem; text-align: center; }
+        .footer-content { max-width: 1000px; margin: 0 auto; }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+        .footer-links a { color: var(--text-light); text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--primary); }
+        .footer-bottom { color: var(--text-light); font-size: 0.9rem; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        @media (max-width: 768px) { .nav-content { padding: 0 1.5rem; } .hero { padding: 4rem 1.5rem 3rem; } .container { padding: 3rem 1.5rem; } .contact-card { padding: 2rem; } .info-list li { flex-direction: column; gap: 0.5rem; } .info-list li strong { min-width: auto; } .footer-links { flex-direction: column; gap: 1rem; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">Kaspar Digital</div>
+            <a href="/" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+    <section class="hero">
+        <div class="hero-icon">PROJECT_ICON</div>
+        <h1 class="hero-title">PROJECT_NAME Support</h1>
+        <p class="hero-subtitle">Get help, report issues, and learn more</p>
+    </section>
+    <div class="container">
+        <p class="intro-text">Thank you for using <strong>PROJECT_NAME!</strong> We're committed to providing you with the best experience. Whether you've encountered an issue or have a question, we're here to help.</p>
+        <div class="contact-card">
+            <div class="contact-header"><span class="contact-icon">📧</span><h2>Contact Support</h2></div>
+            <p>If you encounter a bug, have a feature request, or need assistance, our support team is ready to help. We typically respond within 24 hours.</p>
+            <div class="info-list">
+                <p class="info-list-title">For the fastest resolution, please include:</p>
+                <ul>
+                    <li><strong>Device/Browser</strong><span>e.g., Chrome on Windows, Safari on iPhone</span></li>
+                    <li><strong>Issue Description</strong><span>Detailed steps to reproduce the problem</span></li>
+                    <li><strong>Screenshots</strong><span>If applicable, attach screenshots</span></li>
+                </ul>
+            </div>
+            <div style="text-align: center;">
+                <a href="mailto:support@kaspardigital.com" class="email-cta">support@kaspardigital.com</a>
+            </div>
+        </div>
+        <div class="contact-card" style="margin-top: 4rem; text-align: center;">
+            <h2 style="margin-bottom: 1rem;">Still Have Questions?</h2>
+            <p>Our support team is happy to help with any questions or concerns.</p>
+            <a href="mailto:support@kaspardigital.com" class="email-cta">Contact Support Team</a>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/#apps">Portfolio</a>
+                <a href="/#contact">Contact</a>
+                <a href="/support/project-id.html">Support & FAQ</a>
+                <a href="/privacy/project-id.html">Privacy Policy</a>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 Kaspar Digital. All rights reserved.</p></div>
+        </div>
+    </footer>
+</body>
+</html>

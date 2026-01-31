@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake MODERN - Support & FAQ | Kaspar Digital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #8b5cf6;
+            --accent: #10b981;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --border: #e2e8f0;
+            --shadow: rgba(15, 23, 42, 0.08);
+            --shadow-lg: rgba(15, 23, 42, 0.12);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Outfit', sans-serif; color: var(--text-dark); background: var(--bg-light); line-height: 1.6; }
+        .navbar { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+        .nav-content { max-width: 1400px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 800; background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .back-link { color: var(--primary); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 0.5rem; transition: transform 0.3s; }
+        .back-link:hover { transform: translateX(-5px); }
+        .hero { background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%); padding: 6rem 2rem 4rem; text-align: center; }
+        .hero-icon { font-size: 5rem; margin-bottom: 1.5rem; animation: bounce 2s infinite; }
+        .hero-title { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; margin-bottom: 1rem; color: var(--text-dark); }
+        .hero-subtitle { font-size: 1.2rem; color: var(--text-light); max-width: 600px; margin: 0 auto; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 4rem 2rem; }
+        .intro-text { font-size: 1.1rem; color: var(--text-light); margin-bottom: 3rem; text-align: center; line-height: 1.8; }
+        .intro-text strong { color: var(--primary); font-weight: 600; }
+        .contact-card { background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 8px 30px var(--shadow); margin-bottom: 3rem; border: 2px solid transparent; transition: all 0.3s; }
+        .contact-card:hover { border-color: var(--primary); box-shadow: 0 12px 40px var(--shadow-lg); }
+        .contact-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+        .contact-icon { font-size: 2.5rem; }
+        .contact-header h2 { font-size: 2rem; font-weight: 700; color: var(--text-dark); }
+        .contact-card p { color: var(--text-light); margin-bottom: 1.5rem; line-height: 1.8; }
+        .info-list { background: var(--bg-light); padding: 2rem; border-radius: 12px; margin: 2rem 0; }
+        .info-list-title { font-weight: 600; color: var(--text-dark); margin-bottom: 1rem; }
+        .info-list ul { list-style: none; padding-left: 0; }
+        .info-list li { padding: 0.75rem 0; color: var(--text-light); border-bottom: 1px solid var(--border); display: flex; align-items: start; gap: 0.75rem; }
+        .info-list li:last-child { border-bottom: none; }
+        .info-list li strong { color: var(--primary); font-weight: 600; min-width: 180px; }
+        .email-cta { background: var(--primary); color: white; padding: 1.25rem 2.5rem; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 1.1rem; display: inline-block; margin-top: 1.5rem; transition: all 0.3s; box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3); }
+        .email-cta:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(37, 99, 235, 0.4); }
+        .faq-section { margin-top: 4rem; }
+        .section-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+        .section-icon { font-size: 2.5rem; }
+        .section-title { font-size: 2rem; font-weight: 700; color: var(--text-dark); }
+        .faq-item { background: white; padding: 2rem; border-radius: 16px; margin-bottom: 1.5rem; box-shadow: 0 4px 20px var(--shadow); transition: all 0.3s; border: 2px solid transparent; }
+        .faq-item:hover { border-color: var(--primary); transform: translateY(-2px); }
+        .faq-question { font-size: 1.3rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem; }
+        .faq-answer { color: var(--text-light); line-height: 1.8; font-size: 1.05rem; }
+        .additional-faqs { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .quick-faq { background: var(--bg-light); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--accent); }
+        .quick-faq h4 { font-size: 1.1rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.75rem; }
+        .quick-faq p { color: var(--text-light); font-size: 0.95rem; line-height: 1.6; }
+        .footer { background: var(--text-dark); color: white; padding: 3rem 2rem; margin-top: 6rem; text-align: center; }
+        .footer-content { max-width: 1000px; margin: 0 auto; }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+        .footer-links a { color: var(--text-light); text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--primary); }
+        .footer-bottom { color: var(--text-light); font-size: 0.9rem; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        @media (max-width: 768px) { .nav-content { padding: 0 1.5rem; } .hero { padding: 4rem 1.5rem 3rem; } .container { padding: 3rem 1.5rem; } .contact-card { padding: 2rem; } .info-list { padding: 1.5rem; } .info-list li { flex-direction: column; gap: 0.5rem; } .info-list li strong { min-width: auto; } .additional-faqs { grid-template-columns: 1fr; } .footer-links { flex-direction: column; gap: 1rem; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">Kaspar Digital</div>
+            <a href="/" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+    <section class="hero">
+        <div class="hero-icon">🐍</div>
+        <h1 class="hero-title">Snake MODERN Support</h1>
+        <p class="hero-subtitle">Get help, report issues, and learn more about the game</p>
+    </section>
+    <div class="container">
+        <p class="intro-text">Thank you for downloading and playing <strong>Snake MODERN!</strong> We're committed to providing you with the best gaming experience. Whether you've encountered an issue or just have a question, we're here to help.</p>
+        <div class="contact-card">
+            <div class="contact-header"><span class="contact-icon">📧</span><h2>Contact Support</h2></div>
+            <p>If you encounter a bug, have a feature request, or need assistance with any aspect of the game, our dedicated support team is ready to help. We typically respond within 24 hours.</p>
+            <div class="info-list">
+                <p class="info-list-title">For the fastest resolution, please include:</p>
+                <ul>
+                    <li><strong>Device Model</strong><span>e.g., iPhone 15, iPad Air 5th Gen</span></li>
+                    <li><strong>iOS Version</strong><span>e.g., iOS 17.5</span></li>
+                    <li><strong>Issue Description</strong><span>Detailed steps to reproduce the problem</span></li>
+                    <li><strong>Screenshots</strong><span>If applicable, attach screenshots of the issue</span></li>
+                </ul>
+            </div>
+            <div style="text-align: center;">
+                <a href="mailto:support@kaspardigital.com" class="email-cta">support@kaspardigital.com</a>
+            </div>
+        </div>
+        <section class="faq-section">
+            <div class="section-header"><span class="section-icon">❓</span><h2 class="section-title">Frequently Asked Questions</h2></div>
+            <div class="faq-item">
+                <h3 class="faq-question">What is the goal of Snake MODERN?</h3>
+                <p class="faq-answer">The goal is classic and simple: control your snake to eat the food pellets that appear on the screen. Each pellet makes your snake grow longer. The game ends when the snake runs into a wall or its own body. The longer your snake, the higher your score!</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">How do I control the snake?</h3>
+                <p class="faq-answer">Use swipe gestures to control your snake's direction. Swipe up, down, left, or right to change direction. The snake will continue moving in the last direction until you swipe to change it. Quick reflexes are key to avoiding collisions!</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">Is there a way to pause the game?</h3>
+                <p class="faq-answer">Yes! Tap the pause button in the top corner of the screen during gameplay. This will freeze the game until you're ready to continue. Your score and progress are saved when you pause.</p>
+            </div>
+            <div class="additional-faqs">
+                <div class="quick-faq"><h4>🎮 Game Modes</h4><p>Snake MODERN features multiple difficulty levels. Start with Classic mode and work your way up to Challenge mode for an intense experience!</p></div>
+                <div class="quick-faq"><h4>🏆 High Scores</h4><p>Your highest score is automatically saved locally on your device. Try to beat your personal best with each playthrough!</p></div>
+                <div class="quick-faq"><h4>📱 Device Compatibility</h4><p>Snake MODERN is optimized for iPhone and iPad running iOS 14.0 or later. Works great on all screen sizes.</p></div>
+                <div class="quick-faq"><h4>💾 Data & Privacy</h4><p>We respect your privacy. The game stores only your high score locally on your device. <a href="/privacy/snake-modern.html" style="color: var(--primary);">Read our Privacy Policy</a> for details.</p></div>
+                <div class="quick-faq"><h4>🔄 Updates</h4><p>We regularly release updates with bug fixes, performance improvements, and new features. Make sure to keep your app updated!</p></div>
+                <div class="quick-faq"><h4>💡 Tips & Tricks</h4><p>Plan your moves ahead! Don't just react to the food. Think about where your snake will be after eating and avoid trapping yourself.</p></div>
+            </div>
+        </section>
+        <div class="contact-card" style="margin-top: 4rem; text-align: center;">
+            <h2 style="margin-bottom: 1rem;">Still Have Questions?</h2>
+            <p>Can't find what you're looking for? Our support team is happy to help with any questions or concerns you may have.</p>
+            <a href="mailto:support@kaspardigital.com" class="email-cta">Contact Support Team</a>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/#apps">Portfolio</a>
+                <a href="/#contact">Contact</a>
+                <a href="/support/snake-modern.html">Support & FAQ</a>
+                <a href="/privacy/snake-modern.html">Privacy Policy</a>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 Kaspar Digital. All rights reserved.</p></div>
+        </div>
+    </footer>
+</body>
+</html>
