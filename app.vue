@@ -4,7 +4,7 @@
     <nav class="navbar">
       <div class="nav-content">
         <div class="logo">
-          <span class="logo-text">Kaspar Digital</span>
+           <a href="#home" class="logo-text" @click="scrollTo('home')" style="text-decoration: none;">Kaspar Digital</a>
         </div>
         <ul class="nav-menu">
           <li><a href="#home" @click="scrollTo('home')">Home</a></li>
