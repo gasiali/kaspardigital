@@ -12,8 +12,8 @@
       <span v-for="tag in project.tags" :key="tag" class="tag">{{ tag }}</span>
     </div>
     <div class="app-actions">
-      <a :href="supportUrl" class="btn btn-outline" target="_blank" rel="noopener">Support</a>
-      <a :href="privacyUrl" class="btn btn-outline" target="_blank" rel="noopener">Privacy</a>
+      <a :href="supportUrl" class="btn btn-outline">Support</a>
+      <a :href="privacyUrl" class="btn btn-outline">Privacy</a>
       <a
         v-if="project.primaryAction"
         :href="project.primaryAction.url"

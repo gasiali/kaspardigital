@@ -1,46 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake MODERN - Privacy Policy | Kaspar Digital</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <style>
-        :root { --primary: #2563eb; --primary-dark: #1e40af; --secondary: #8b5cf6; --accent: #10b981; --text-dark: #1e293b; --text-light: #64748b; --bg-light: #f8fafc; --border: #e2e8f0; --shadow: rgba(15, 23, 42, 0.08); }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Outfit', sans-serif; color: var(--text-dark); background: var(--bg-light); line-height: 1.6; }
-        .navbar { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
-        .nav-content { max-width: 1000px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.5rem; font-weight: 800; background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .back-link { color: var(--primary); text-decoration: none; font-weight: 600; transition: transform 0.3s; }
-        .back-link:hover { transform: translateX(-5px); }
-        .hero { background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%); padding: 6rem 2rem 4rem; text-align: center; }
-        .hero-icon { font-size: 5rem; margin-bottom: 1.5rem; }
-        .hero-title { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; margin-bottom: 1rem; color: var(--text-dark); }
-        .hero-subtitle { font-size: 1.2rem; color: var(--text-light); }
-        .container { max-width: 1000px; margin: 0 auto; padding: 4rem 2rem; }
-        .policy-content { background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 4px 20px var(--shadow); }
-        .policy-content h2 { font-size: 1.5rem; font-weight: 700; color: var(--primary); margin: 2.5rem 0 1rem; }
-        .policy-content h2:first-child { margin-top: 0; }
-        .policy-content p, .policy-content li { color: var(--text-light); margin-bottom: 1rem; line-height: 1.8; }
-        .policy-content ul { margin: 1rem 0 1rem 1.5rem; }
-        .policy-content strong { color: var(--text-dark); }
-        .last-updated { font-size: 0.95rem; color: var(--text-light); margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
-        .footer { background: var(--text-dark); color: white; padding: 3rem 2rem; margin-top: 6rem; text-align: center; }
-        .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
-        .footer-links a { color: var(--text-light); text-decoration: none; font-weight: 500; transition: color 0.3s; }
-        .footer-links a:hover { color: var(--primary); }
-        .footer-bottom { color: var(--text-light); font-size: 0.9rem; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.1); }
-        @media (max-width: 768px) { .container { padding: 3rem 1.5rem; } .policy-content { padding: 2rem; } }
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #8b5cf6;
+            --accent: #10b981;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --border: #e2e8f0;
+            --shadow: rgba(15, 23, 42, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            color: var(--text-dark);
+            background: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1.25rem 0;
+        }
+
+        .nav-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .back-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .hero-icon {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .policy-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px var(--shadow);
+        }
+
+        .policy-content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 2.5rem 0 1rem;
+        }
+
+        .policy-content h2:first-child {
+            margin-top: 0;
+        }
+
+        .policy-content p,
+        .policy-content li {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .policy-content ul {
+            margin: 1rem 0 1rem 1.5rem;
+        }
+
+        .policy-content strong {
+            color: var(--text-dark);
+        }
+
+        .last-updated {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 6rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 3rem 1.5rem;
+            }
+
+            .policy-content {
+                padding: 2rem;
+            }
+        }
     </style>
 </head>
+
 <body>
     <nav class="navbar">
         <div class="nav-content">
-            <a href="index.html" class="logo" style="text-decoration: none;">Kaspar Digital</a>
-            <a href="index.html" class="back-link">
+            <a href="/" class="logo" style="text-decoration: none;">Kaspar Digital</a>
+            <a href="/" class="back-link">
                 <span class="arrow">←</span> Back to Home
             </a>
         </div>
@@ -53,7 +204,8 @@
     <div class="container">
         <div class="policy-content">
             <p class="last-updated"><strong>Last updated:</strong> January 2025</p>
-            <p>Kaspar Digital ("we," "our," or "us") respects your privacy. This Privacy Policy explains how Snake MODERN ("the App") collects, uses, and protects your information.</p>
+            <p>Kaspar Digital ("we," "our," or "us") respects your privacy. This Privacy Policy explains how Snake
+                MODERN ("the App") collects, uses, and protects your information.</p>
             <h2>1. Information We Collect</h2>
             <p>Snake MODERN is designed with privacy in mind. The App:</p>
             <ul>
@@ -70,15 +222,21 @@
             </ul>
             <p>This data remains on your iPhone or iPad and is deleted if you uninstall the App.</p>
             <h2>3. Third-Party Services</h2>
-            <p>Snake MODERN may use analytics or crash reporting services provided by Apple (e.g., App Store Connect analytics). These services collect anonymous usage data. No personally identifiable information is shared.</p>
+            <p>Snake MODERN may use analytics or crash reporting services provided by Apple (e.g., App Store Connect
+                analytics). These services collect anonymous usage data. No personally identifiable information is
+                shared.</p>
             <h2>4. Children's Privacy</h2>
-            <p>Snake MODERN does not knowingly collect personal information from children. The App is suitable for all ages and does not require any personal data to function.</p>
+            <p>Snake MODERN does not knowingly collect personal information from children. The App is suitable for all
+                ages and does not require any personal data to function.</p>
             <h2>5. Changes to This Policy</h2>
-            <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated "Last updated" date.</p>
+            <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an
+                updated "Last updated" date.</p>
             <h2>6. Contact Us</h2>
             <p>If you have questions about this Privacy Policy or Snake MODERN, please contact us at:</p>
-            <p><strong>Email:</strong> <a href="mailto:support@kaspardigital.com" style="color: var(--primary);">support@kaspardigital.com</a></p>
-            <p><strong>Support:</strong> <a href="/support/snake-modern.html" style="color: var(--primary);">Snake MODERN Support & FAQ</a></p>
+            <p><strong>Email:</strong> <a href="mailto:support@kaspardigital.com"
+                    style="color: var(--primary);">support@kaspardigital.com</a></p>
+            <p><strong>Support:</strong> <a href="/support/snake-modern.html" style="color: var(--primary);">Snake
+                    MODERN Support & FAQ</a></p>
         </div>
     </div>
     <footer class="footer">
@@ -89,7 +247,10 @@
             <a href="/support/snake-modern.html">Support & FAQ</a>
             <a href="/privacy/snake-modern.html">Privacy Policy</a>
         </div>
-        <div class="footer-bottom"><p>&copy; 2025 Kaspar Digital. All rights reserved.</p></div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Kaspar Digital. All rights reserved.</p>
+        </div>
     </footer>
 </body>
+
 </html>
